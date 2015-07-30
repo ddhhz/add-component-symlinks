@@ -5,7 +5,8 @@ var suspend = require('suspend');
 var resume = suspend.resume;
 
 var addComponentSymlinks = suspend.async(function* (dirname) {
-  console.error('addComponentSymlinks: %j', dirname);
+  console.log('addComponentSymlinks...')
+  // console.error('addComponentSymlinks: %j', dirname);
 
   var stat = yield fs.lstat(dirname, resume());
 
@@ -38,7 +39,7 @@ var addComponentSymlinks = suspend.async(function* (dirname) {
 });
 
 var processDir = suspend.async(function* (dirname) {
-  console.error('processDir: %j', dirname);
+  // console.error('processDir: %j', dirname);
 
   // checks the `component.json` in the specified dir
   var stat = yield fs.lstat(dirname, resume());
@@ -61,12 +62,12 @@ var processDir = suspend.async(function* (dirname) {
   if (!component || !component.name) {
     return;
   }
-  console.error('read "component.json" file with "name": %j', component.name);
+  // console.error('read "component.json" file with "name": %j', component.name);
 
   var nodeModulesDir = path.dirname(dirname);
   var src = path.basename(dirname);
   if (src == component.name) {
-    console.error('ignoring matching package and component name: %j', src);
+    // console.error('ignoring matching package and component name: %j', src);
     return;
   }
   var dst = path.resolve(nodeModulesDir, component.name);
@@ -75,14 +76,14 @@ var processDir = suspend.async(function* (dirname) {
     yield fs.unlink(dst, resume());
   } catch (e) {
     if ('EPERM' == e.code) {
-      console.error('skipping symlink for %s because of existing directory with name: %s', src, component.name);
+      // console.error('skipping symlink for %s because of existing directory with name: %s', src, component.name);
       return;
     }
     if ('ENOENT' != e.code) throw e;
   }
 
   // finally, we can add a symlink for this component
-  console.log('adding symlink %j -> %j', src, component.name);
+  // console.log('adding symlink %j -> %j', src, component.name);
   var type;
   if (/win/.test(process.platform)) {
     // on Windows, we must absolutize the arguments, otherwise node
