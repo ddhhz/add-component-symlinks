@@ -5,11 +5,12 @@
   "main": "index.js",
   "bin": "bin/add-component-symlinks",
   "scripts": {
-    "prepublish": "regenerator --include-runtime index.es6.js > index.js"
+    "prepublish": "regenerator --include-runtime index.es6.js > index.js",
+    "install": "regenerator --include-runtime index.es6.js > index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/cloudup/add-component-symlinks.git"
+    "url": "git://github.com/ddhhz/add-component-symlinks.git"
   },
   "keywords": [
     "component",
@@ -22,9 +23,9 @@
   "author": "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cloudup/add-component-symlinks/issues"
+    "url": "https://github.com/ddhhz/add-component-symlinks/issues"
   },
-  "homepage": "https://github.com/cloudup/add-component-symlinks",
+  "homepage": "https://github.com/ddhhz/add-component-symlinks",
   "dependencies": {
     "suspend": "~0.4.0"
   },
