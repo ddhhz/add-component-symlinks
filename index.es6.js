@@ -5,7 +5,6 @@ var suspend = require('suspend');
 var resume = suspend.resume;
 
 var addComponentSymlinks = suspend.async(function* (dirname) {
-  console.log('addComponentSymlinks...')
   // console.error('addComponentSymlinks: %j', dirname);
 
   var stat = yield fs.lstat(dirname, resume());
