@@ -7,7 +7,7 @@
   "scripts": {
     "prepublish": "regenerator --include-runtime index.es6.js > index.js"
   },
-  "repository": {
+  "repository": {npm
     "type": "git",
     "url": "git://github.com/ddhhz/add-component-symlinks.git"
   },
@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/ddhhz/add-component-symlinks",
   "dependencies": {
-    "suspend": "~0.4.0",
-    "regenerator": "~0.4.0"
+    "suspend": "~0.4.0"
   },
   "devDependencies": {
+    "regenerator": "~0.4.0"
   }
 }
