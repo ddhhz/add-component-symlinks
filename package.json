@@ -5,8 +5,7 @@
   "main": "index.js",
   "bin": "bin/add-component-symlinks",
   "scripts": {
-    "prepublish": "regenerator --include-runtime index.es6.js > index.js",
-    "install": "regenerator --include-runtime index.es6.js > index.js"
+    "prepublish": "regenerator --include-runtime index.es6.js > index.js"
   },
   "repository": {
     "type": "git",
